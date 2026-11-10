@@ -1,7 +1,24 @@
 import axios from "axios";
 
+export const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+
+// Hàm lấy URL ảnh đầy đủ từ storage Laravel hoặc URL tuyệt đối
+export function getAssetUrl(path) {
+  if (!path) return "/placeholder.svg";
+  if (path.startsWith("http://") || path.startsWith("https://") || path.startsWith("data:")) {
+    return path;
+  }
+  const backendRoot = API_BASE_URL.replace(/\/api\/?$/, "");
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  if (cleanPath.startsWith("storage/")) {
+    return `${backendRoot}/${cleanPath}`;
+  }
+  return `${backendRoot}/storage/${cleanPath}`;
+}
+
 const api = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: API_BASE_URL,
   headers: {
     Accept: "application/json",
   },

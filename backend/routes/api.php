@@ -13,6 +13,7 @@ use App\Http\Controllers\Api\CheckoutController;
 use App\Http\Controllers\Api\BaiVietController;
 use App\Http\Controllers\Api\KhuyenMaiController;
 use App\Http\Controllers\api\ChuDeBaiVietController;
+use App\Http\Controllers\Api\ChatbotController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -258,3 +259,12 @@ Route::middleware(['auth:sanctum', 'is.admin'])
         Route::put('/{id}', [ChuDeBaiVietController::class, 'update']);
         Route::delete('/{id}', [ChuDeBaiVietController::class, 'destroy']);
     });
+
+// ==================== CHATBOT TƯ VẤN BÁN HÀNG ====================
+Route::prefix('chatbot')->group(function () {
+    Route::get('/policies', [ChatbotController::class, 'policies']);
+    Route::post('/compare', [ChatbotController::class, 'compare']);
+    Route::get('/stock', [ChatbotController::class, 'checkStock']);
+    Route::get('/consult', [ChatbotController::class, 'consult']);
+});
+

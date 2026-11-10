@@ -22,17 +22,73 @@ class SanPhamController extends Controller
             'thuonghieu'
         ]);
 
-        // Tìm kiếm theo tên (nếu có truyền ?search=...)
+        // Tìm kiếm theo tên hoặc mô tả
         if ($request->filled('search')) {
             $search = $request->search;
-            $query->where('ten', 'like', '%' . $search . '%');
+            if ($request->boolean('include_mota')) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('ten', 'like', '%' . $search . '%')
+                      ->orWhere('mota', 'like', '%' . $search . '%');
+                });
+            } else {
+                $query->where('ten', 'like', '%' . $search . '%');
+            }
         }
+
         // Lọc theo danh mục (nếu có truyền ?danhmuc_id=...)
         if ($request->filled('danhmuc_id')) {
             $query->where('danhmuc_id', $request->integer('danhmuc_id'));
         }
-        // Sắp xếp mặc định sản phẩm mới nhất lên đầu
-        $query->orderBy('created_at', 'desc');
+
+        // Lọc theo thương hiệu (nếu có truyền ?thuonghieu_id=...)
+        if ($request->filled('thuonghieu_id')) {
+            $query->where('thuonghieu_id', $request->integer('thuonghieu_id'));
+        }
+
+        // Lọc theo khoảng giá (tính theo giá thực tế bán ra)
+        if ($request->filled('min_price') || $request->filled('gia_tu')) {
+            $minPrice = (float) ($request->min_price ?? $request->gia_tu);
+            $query->whereRaw('COALESCE(NULLIF(giakhuyenmai, 0), gia) >= ?', [$minPrice]);
+        }
+        if ($request->filled('max_price') || $request->filled('gia_den')) {
+            $maxPrice = (float) ($request->max_price ?? $request->gia_den);
+            $query->whereRaw('COALESCE(NULLIF(giakhuyenmai, 0), gia) <= ?', [$maxPrice]);
+        }
+
+        // Lọc sản phẩm đang giảm giá
+        if ($request->boolean('on_sale') || $request->boolean('has_sale')) {
+            $query->whereNotNull('giakhuyenmai')
+                  ->where('giakhuyenmai', '>', 0)
+                  ->whereColumn('giakhuyenmai', '<', 'gia');
+        }
+
+        // Lọc sản phẩm còn hàng
+        if ($request->boolean('in_stock')) {
+            $query->where('soluong', '>', 0);
+        }
+
+        // Lọc theo trạng thái hiển thị
+        if ($request->filled('trangthai')) {
+            $query->where('trangthai', $request->trangthai);
+        }
+
+        // Sắp xếp
+        $sort = $request->input('sort', 'newest');
+        switch ($sort) {
+            case 'price_asc':
+                $query->orderByRaw('COALESCE(NULLIF(giakhuyenmai, 0), gia) ASC');
+                break;
+            case 'price_desc':
+                $query->orderByRaw('COALESCE(NULLIF(giakhuyenmai, 0), gia) DESC');
+                break;
+            case 'name_asc':
+                $query->orderBy('ten', 'asc');
+                break;
+            case 'newest':
+            default:
+                $query->orderBy('created_at', 'desc');
+                break;
+        }
 
         // Lấy số lượng phần tử trên 1 trang (mặc định 10)
         $perPage = min(max($request->integer('per_page', 10), 1), 100);

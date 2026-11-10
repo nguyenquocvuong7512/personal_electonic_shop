@@ -1,0 +1,270 @@
+
+.product-trash-page {
+  padding: 28px;
+  color: #1f2937;
+}
+
+.trash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.trash-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.trash-header p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.trash-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: #374151;
+  background: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.trash-back-button:hover {
+  background: #f3f4f6;
+}
+
+.trash-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.trash-search-form input {
+  flex: 1;
+  min-width: 220px;
+  padding: 11px 14px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+}
+
+.trash-search-form input:focus {
+  border-color: #64748b;
+  box-shadow: 0 0 0 3px rgb(100 116 139 / 12%);
+}
+
+.trash-search-form button,
+.trash-actions button {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 7px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.trash-search-form button {
+  color: #fff;
+  background: #334155;
+}
+
+.trash-search-form button:hover {
+  background: #1e293b;
+}
+
+.trash-search-form button.trash-reset-button {
+  color: #374151;
+  background: #e5e7eb;
+}
+
+.trash-search-form button:disabled,
+.trash-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.trash-alert {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  line-height: 1.5;
+}
+
+.trash-alert-success {
+  color: #166534;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+}
+
+.trash-alert-error {
+  color: #991b1b;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+.trash-table-card {
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 4%);
+}
+
+.trash-table-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.trash-table-heading h2 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.trash-table-heading span {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.trash-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.trash-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.trash-table th,
+.trash-table td {
+  padding: 15px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.trash-table th {
+  color: #475569;
+  background: #f8fafc;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.trash-table td {
+  font-size: 14px;
+}
+
+.trash-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.trash-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.trash-product-name {
+  min-width: 180px;
+  max-width: 300px;
+  overflow: hidden;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.trash-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trash-actions .trash-restore-button {
+  color: #166534;
+  background: #dcfce7;
+}
+
+.trash-actions .trash-restore-button:hover {
+  background: #bbf7d0;
+}
+
+.trash-actions .trash-delete-button {
+  color: #991b1b;
+  background: #fee2e2;
+}
+
+.trash-actions .trash-delete-button:hover {
+  background: #fecaca;
+}
+
+.trash-empty-state {
+  padding: 48px 20px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.trash-empty-icon {
+  margin-bottom: 12px;
+  font-size: 38px;
+}
+
+.trash-empty-state h3 {
+  margin: 0 0 8px;
+  color: #374151;
+  font-size: 18px;
+}
+
+.trash-empty-state p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .product-trash-page {
+    padding: 16px;
+  }
+
+  .trash-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .trash-header h1 {
+    font-size: 23px;
+  }
+
+  .trash-search-form {
+    flex-direction: column;
+  }
+
+  .trash-search-form input {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .trash-search-form button {
+    width: 100%;
+  }
+
+  .trash-table-heading {
+    padding: 15px;
+  }
+
+  .trash-table th,
+  .trash-table td {
+    padding: 12px;
+  }
+}

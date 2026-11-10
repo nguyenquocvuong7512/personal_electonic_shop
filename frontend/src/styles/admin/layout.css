@@ -1,0 +1,283 @@
+/* ==============================
+   Layout Tổng thể Admin
+   ============================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.admin-layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==============================
+   Sidebar Bên Trái
+   ============================== */
+
+.admin-sidebar {
+  width: 250px;
+  background-color: #1e293b;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  height: 64px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+}
+
+.sidebar-logo h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: -0.3px;
+}
+
+.sidebar-nav {
+  padding: 12px 0;
+  flex: 1;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  margin-bottom: 2px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-left: 4px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+.nav-item.active {
+  background-color: #334155;
+  color: #ffffff;
+  border-left-color: #38bdf8;
+  font-weight: 600;
+}
+
+.nav-icon {
+  margin-right: 12px;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==============================
+   Vùng Nội Dung Chính (Bên Phải)
+   ============================== */
+
+.admin-main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0; /* Tránh tràn layout khi table rộng */
+}
+
+/* ==============================
+   Top Header Admin
+   ============================== */
+
+.admin-top-header {
+  height: 64px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+}
+
+/* Ô tìm kiếm trong Header */
+.header-search input {
+  padding: 9px 16px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  width: 280px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.header-search input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Thông tin User & Nút thao tác trong Header */
+.header-user {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Nút quay lại giao diện Shop */
+.btn-back-shop {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 13px;
+  background-color: #f1f5f9;
+  color: #475569;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-back-shop:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #0284c7;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* Nút Đăng xuất Admin */
+.btn-admin-logout {
+  padding: 7px 14px;
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-admin-logout:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* ==============================
+   Nơi Chứa Trang Con (Vùng render children)
+   ============================== */
+
+.admin-content-body {
+  padding: 28px;
+  flex: 1;
+}
+/* Màn hình thông báo trạng thái full màn hình */
+.admin-status-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f6f9;
+  font-family: Arial, sans-serif;
+}
+
+.admin-status-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+}
+
+.admin-status-card.error {
+  border-top: 4px solid #e74c3c;
+}
+
+.error-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.admin-status-card h2 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+  font-size: 22px;
+}
+
+.error-text {
+  color: #e74c3c;
+  font-weight: 600;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.redirect-hint {
+  color: #7f8c8d;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.btn-redirect-now {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-redirect-now:hover {
+  background-color: #2980b9;
+}
+
+/* Hiệu ứng Spinner quay */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

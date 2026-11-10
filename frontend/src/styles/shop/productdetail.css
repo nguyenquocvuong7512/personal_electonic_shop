@@ -1,0 +1,328 @@
+
+.product-detail {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  box-sizing: border-box;
+  color: #1f2937;
+}
+
+.product-detail h1 {
+  margin: 0 0 24px;
+  color: #111827;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.product-detail p {
+  margin: 12px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .product-detail {
+    padding: 22px 14px 32px;
+  }
+
+  .product-detail h1 {
+    font-size: 23px;
+  }
+}
+
+/* Bố cục thông tin chi tiết sản phẩm */
+.product-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.product-detail-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.product-detail-image img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: 360px;
+  object-fit: contain;
+}
+
+.product-detail-info h1 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.product-detail-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.product-detail-price strong {
+  color: #dc2626;
+  font-size: 26px;
+}
+
+.product-detail-price del {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.product-detail-info p {
+  margin: 14px 0;
+}
+
+.product-detail-cart-btn {
+  margin-top: 18px;
+  padding: 13px 24px;
+  border: none;
+  border-radius: 8px;
+  background: #facc15;
+  color: #111827;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.product-detail-cart-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.product-detail-description {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.product-detail-description h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.product-detail-description p {
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+@media (max-width: 700px) {
+  .product-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .product-detail-image {
+    min-height: 260px;
+  }
+
+  .product-detail-image img {
+    height: 260px;
+  }
+
+  .product-detail-info h1 {
+    font-size: 23px;
+  }
+}
+
+/* Nội dung bên trong component chi tiết sản phẩm */
+.product-detail-content {
+  width: 100%;
+}
+
+.product-detail-content .product-detail-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.product-detail-content .product-detail-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.product-detail-content .product-detail-image img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: 360px;
+  object-fit: contain;
+}
+
+.product-detail-content .product-detail-info h1 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+.product-detail-content .product-detail-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.product-detail-content .product-detail-price strong {
+  color: #dc2626;
+  font-size: 26px;
+}
+
+.product-detail-content .product-detail-price del {
+  color: #9ca3af;
+  font-size: 16px;
+}
+
+.product-detail-content .product-detail-info p {
+  margin: 14px 0;
+}
+
+.product-detail-content .product-detail-description {
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.product-detail-content .product-detail-description h2 {
+  margin: 0 0 16px;
+  font-size: 22px;
+}
+
+.product-detail-content .product-detail-description p {
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+@media (max-width: 700px) {
+  .product-detail-content .product-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .product-detail-content .product-detail-image {
+    min-height: 260px;
+  }
+
+  .product-detail-content .product-detail-image img {
+    height: 260px;
+  }
+
+  .product-detail-content .product-detail-info h1 {
+    font-size: 23px;
+  }
+}
+
+/* Khu vực sản phẩm liên quan */
+.product-related {
+  margin-top: 40px;
+}
+
+.product-related h2 {
+  margin: 0 0 24px;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.product-related .products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .product-related .products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+/* Chọn số lượng sản phẩm */
+.product-detail-quantity {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0 18px;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.quantity-control button {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: #f3f4f6;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.quantity-control button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.quantity-control span {
+  min-width: 42px;
+  text-align: center;
+}
+
+/* Nút thêm vào giỏ hàng */
+.product-detail-add-cart {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.product-detail-add-cart:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+.product-detail-add-cart:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.product-detail-cart-message {
+  margin-top: 12px;
+}
+
+.product-detail-cart-message.success {
+  color: #15803d;
+}
+
+.product-detail-cart-message.error {
+  color: #dc2626;
+}

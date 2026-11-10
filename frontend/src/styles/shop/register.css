@@ -1,0 +1,175 @@
+/* ================================
+   REGISTER PAGE - ELECTRO STYLE
+================================ */
+
+/* Container đăng ký */
+.register-container {
+  width: calc(100% - 32px);
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 34px 30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(17, 19, 26, 0.08);
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Tiêu đề */
+.register-title {
+  margin: 0 0 28px;
+  color: #191b23;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: center;
+}
+
+/* Thông báo lỗi */
+.register-error-alert {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Thông báo thành công */
+.register-success-alert {
+  margin-bottom: 20px;
+  padding: 12px 15px;
+  color: #15803d;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* Form */
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Nhóm nhập liệu */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Label */
+.form-label {
+  color: #252731;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Input */
+.form-input {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 13px;
+  color: #191b23;
+  background: #ffffff;
+  border: 1px solid #d5d8df;
+  border-radius: 7px;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:hover {
+  border-color: #b8bbc3;
+}
+
+.form-input:focus {
+  border-color: #e5bd00;
+  box-shadow: 0 0 0 3px rgba(255, 212, 0, 0.2);
+}
+
+/* Nút đăng ký */
+.btn-submit-register {
+  width: 100%;
+  min-height: 46px;
+  margin-top: 5px;
+  padding: 12px 16px;
+  color: #191b23;
+  background: #ffd400;
+  border: 1px solid #ffd400;
+  border-radius: 7px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-submit-register:hover:not(:disabled) {
+  color: #ffffff;
+  background: #191b23;
+  border-color: #191b23;
+}
+
+.btn-submit-register:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.btn-submit-register:disabled {
+  color: #6b7280;
+  background: #e5e7eb;
+  border-color: #e5e7eb;
+  cursor: not-allowed;
+}
+
+/* Gợi ý đăng nhập */
+.register-login-prompt {
+  margin: 24px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.login-link {
+  color: #191b23;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.login-link:hover {
+  color: #d4aa00;
+  text-decoration: underline;
+}
+
+/* Responsive điện thoại */
+@media (max-width: 480px) {
+  .register-container {
+    margin: 25px auto;
+    padding: 28px 22px;
+    border-radius: 12px;
+  }
+
+  .register-title {
+    font-size: 24px;
+    margin-bottom: 24px;
+  }
+
+  .register-form {
+    gap: 16px;
+  }
+}

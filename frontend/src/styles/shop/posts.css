@@ -1,0 +1,302 @@
+
+/* ================================
+   TRANG DANH SÁCH BÀI VIẾT
+   ================================ */
+
+.posts-main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  box-sizing: border-box;
+  color: #1f2937;
+}
+
+.posts-title {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.posts-description {
+  margin: 0 0 24px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Bộ lọc chủ đề */
+.posts-filter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.posts-filter label {
+  font-weight: 600;
+}
+
+.posts-filter select {
+  min-width: 220px;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #1f2937;
+  font-size: 14px;
+  outline: none;
+}
+
+.posts-filter select:focus {
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgb(245 158 11 / 15%);
+}
+
+/* Tổng số bài viết */
+.posts-total {
+  margin: 16px 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Lưới bài viết */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* Thẻ bài viết */
+.post-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
+}
+
+.post-card-image-link {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #f3f4f6;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.post-card:hover .post-card-image {
+  transform: scale(1.04);
+}
+
+.post-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 18px;
+}
+
+.post-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+
+.post-card-topic {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #fffbeb;
+  color: #b45309;
+  font-weight: 700;
+}
+
+.post-card-date {
+  color: #9ca3af;
+}
+
+.post-card-title {
+  margin: 0 0 12px;
+  color: #111827;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.post-card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.post-card-title a:hover {
+  color: #d97706;
+}
+
+.post-card-excerpt {
+  display: -webkit-box;
+  overflow: hidden;
+  margin: 0 0 18px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.post-card-read-more {
+  align-self: flex-start;
+  margin-top: auto;
+  color: #d97706;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.post-card-read-more:hover {
+  color: #b45309;
+}
+
+/* Chưa có bài viết */
+.posts-empty {
+  padding: 55px 20px;
+  border: 1px dashed #d1d5db;
+  border-radius: 12px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.posts-empty h2 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 21px;
+}
+
+.posts-empty p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+.posts-message {
+  line-height: 1.6;
+}
+
+.posts-error {
+  color: #dc2626;
+}
+
+/* Phân trang */
+.posts-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.posts-pagination button {
+  min-width: 40px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.posts-pagination button:hover:not(:disabled) {
+  border-color: #f59e0b;
+  background: #fffbeb;
+}
+
+.posts-pagination button.active,
+.posts-pagination button:disabled {
+  border-color: #f59e0b;
+  background: #f59e0b;
+  color: #111827;
+  cursor: default;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .posts-main {
+    padding: 28px 20px 40px;
+  }
+
+  .posts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Điện thoại */
+@media (max-width: 640px) {
+  .posts-main {
+    padding: 22px 14px 32px;
+  }
+
+  .posts-title {
+    font-size: 24px;
+  }
+
+  .posts-description {
+    font-size: 14px;
+  }
+
+  .posts-filter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .posts-filter select {
+    width: 100%;
+  }
+
+  .posts-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .post-card-content {
+    padding: 15px;
+  }
+
+  .post-card-title {
+    font-size: 17px;
+  }
+
+  .posts-pagination {
+    gap: 6px;
+    margin-top: 24px;
+  }
+
+  .posts-pagination button {
+    min-width: 36px;
+    min-height: 36px;
+    padding: 7px 9px;
+    font-size: 13px;
+  }
+}
+    

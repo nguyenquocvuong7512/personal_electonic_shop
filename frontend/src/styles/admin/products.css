@@ -1,0 +1,431 @@
+/* src/styles/admin/products.css */
+
+/* Container chung cho trang quản lý sản phẩm */
+.admin-products-page {
+  padding: 24px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Tiêu đề trang và nút thêm */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-header h1 {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.btn-add-product {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-add-product:hover {
+  background-color: #218838;
+}
+
+/* Bảng danh sách sản phẩm */
+.admin-table-container {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  overflow-x: auto;
+}
+
+.admin-product-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-product-table th,
+.admin-product-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.admin-product-table th {
+  background-color: #f1f3f5;
+  color: #495057;
+  font-weight: 600;
+}
+
+/* Style cho ảnh sản phẩm */
+.admin-product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+/* Tên & Giá */
+.product-name {
+  color: #212529;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #0d6efd;
+}
+
+.product-sale-price {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+.no-sale {
+  color: #999;
+}
+
+/* Nút thao tác (Sửa / Xóa) */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.btn-edit {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-edit:hover {
+  background-color: #e0a800;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Thông báo trạng thái */
+.admin-status-message {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+}
+
+.admin-status-message.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+}
+/* Badge Trạng thái */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.hienthi {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.status-badge.an {
+  background-color: #f8d7da;
+  color: #842029;
+}
+/* Layout chung của trang */
+.admin-products-page,
+.product-form-container {
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+/* Nút thêm mới và Quay lại */
+.btn-add-product,
+.btn-back {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-product {
+  background-color: #16a34a;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-add-product:hover {
+  background-color: #15803d;
+}
+
+.btn-back {
+  background-color: #f3f4f6;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.btn-back:hover {
+  background-color: #e5e7eb;
+}
+
+/* Styling Bảng */
+.admin-table-container {
+  overflow-x: auto;
+}
+
+.admin-product-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-product-table th,
+.admin-product-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.admin-product-table th {
+  background-color: #f9fafb;
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.admin-product-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Badges trạng thái */
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.hienthi {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.status-badge.an {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* Nút hành động trong bảng */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  padding: 6px 12px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.btn-edit:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-delete {
+  padding: 6px 12px;
+  background-color: #dc2626;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background-color: #b91c1c;
+}
+
+/* Formatting Form Create/Edit */
+.product-form {
+  max-width: 650px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.current-image-preview {
+  margin-bottom: 8px;
+}
+
+.current-image-preview img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.form-actions {
+  margin-top: 24px;
+}
+
+.btn-submit {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-submit:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.form-error {
+  background-color: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.admin-status-message {
+  padding: 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.admin-status-message.error {
+  color: #dc2626;
+}
+
+/* Nhóm nút thao tác ở tiêu đề trang quản lý sản phẩm */
+.admin-product-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Nút truy cập thùng rác */
+.btn-product-trash {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-product-trash:hover {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+@media (max-width: 600px) {
+  .admin-product-header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

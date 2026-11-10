@@ -1,0 +1,938 @@
+
+/* =========================================
+   1. KHUNG TRANG VA TIEU DE
+========================================= */
+
+.admin-users-page {
+  min-width: 0;
+  padding: 24px;
+  color: #172033;
+  box-sizing: border-box;
+}
+
+.admin-users-page .admin-header,
+.admin-users-page .admin-users-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.admin-users-page .admin-header h1,
+.admin-users-page .admin-users-heading h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+}
+
+.admin-users-page .admin-users-heading > div:first-child p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   2. CAC NUT THAO TAC TREN DAU TRANG
+========================================= */
+
+.admin-users-page .admin-users-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.admin-users-page .admin-users-actions button,
+.admin-users-page .admin-users-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-users-page .admin-users-actions button,
+.admin-users-page .admin-users-btn-primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+.admin-users-page .admin-users-actions button:hover,
+.admin-users-page .admin-users-btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.admin-users-page .admin-users-btn-secondary {
+  background: #fff;
+  color: #334155;
+  border-color: #dbe2ea;
+}
+
+.admin-users-page .admin-users-btn-secondary:hover {
+  background: #f8fafc;
+  border-color: #94a3b8;
+}
+
+.admin-users-page .admin-users-btn:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+.admin-users-page .admin-users-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* =========================================
+   3. KHU VUC TIM KIEM VA LOC
+   Ho tro ca class cu .user-search
+   va class moi .admin-users-filter
+========================================= */
+
+.admin-users-page .user-search {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-users-page .user-search input,
+.admin-users-page .user-search select {
+  box-sizing: border-box;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #374151;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.admin-users-page .user-search input {
+  width: 300px;
+  max-width: 100%;
+}
+
+.admin-users-page .user-search select {
+  min-width: 155px;
+  cursor: pointer;
+}
+
+.admin-users-page .user-search input:focus,
+.admin-users-page .user-search select:focus,
+.admin-users-page .admin-users-filter-field input:focus,
+.admin-users-page .admin-users-filter-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+.admin-users-page .user-search input::placeholder,
+.admin-users-page .admin-users-filter-field input::placeholder {
+  color: #9ca3af;
+}
+
+.admin-users-page .user-search button {
+  height: 42px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-users-page .user-search button:hover {
+  background: #1d4ed8;
+}
+
+/* Nut dat lai trong khu vuc tim kiem */
+.admin-users-page .user-search button:last-child {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.admin-users-page .user-search button:last-child:hover {
+  background: #d1d5db;
+  color: #111827;
+}
+
+/* Khung loc theo giao dien moi */
+.admin-users-page .admin-users-filter {
+  margin-bottom: 24px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+.admin-users-page .admin-users-filter-heading h2,
+.admin-users-page .admin-users-list-heading h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.admin-users-page .admin-users-filter-heading p,
+.admin-users-page .admin-users-list-heading p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.admin-users-page .admin-users-filter-grid {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.5fr) repeat(2, minmax(150px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.admin-users-page .admin-users-filter-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.admin-users-page .admin-users-filter-field label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-users-page .admin-users-filter-field input,
+.admin-users-page .admin-users-filter-field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: #1e293b;
+  font-size: 14px;
+}
+
+.admin-users-page .admin-users-filter-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid #eef2f7;
+}
+
+/* =========================================
+   4. KHU VUC DANH SACH NGUOI DUNG
+========================================= */
+
+.admin-users-page .admin-users-list {
+  min-width: 0;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e8edf3;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+.admin-users-page .admin-users-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+/* =========================================
+   5. BANG NGUOI DUNG - GIU CAU TRUC CU
+========================================= */
+
+.admin-users-page .admin-table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.admin-users-page .admin-user-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-users-page .admin-user-table th,
+.admin-users-page .admin-user-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.admin-users-page .admin-user-table th {
+  background: #f8fafc;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.admin-users-page .admin-user-table td {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.admin-users-page .admin-user-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* =========================================
+   6. NHAN VAI TRO VA TRANG THAI
+========================================= */
+
+.admin-users-page .user-role-badge,
+.admin-users-page .user-status-badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.admin-users-page .user-role-badge.admin {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.admin-users-page .user-role-badge.thanhvien,
+.admin-users-page .user-role-badge.user {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.admin-users-page .user-status-badge.hoatdong {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.admin-users-page .user-status-badge.khoa {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* =========================================
+   7. THONG BAO LOI VA TRANG THAI
+========================================= */
+
+.admin-users-page .admin-status-message {
+  padding: 24px;
+  text-align: center;
+  color: #4b5563;
+}
+
+.admin-users-page .admin-status-message.error {
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
+}
+
+/* =========================================
+   8. CAC NUT SUA VA XOA TRONG BANG
+========================================= */
+
+.admin-users-page .user-table-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.admin-users-page .user-table-actions button {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-users-page .user-table-actions .user-edit-btn {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.admin-users-page .user-table-actions .user-edit-btn:hover {
+  background: #bfdbfe;
+}
+
+.admin-users-page .user-table-actions .user-delete-btn {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.admin-users-page .user-table-actions .user-delete-btn:hover {
+  background: #fecaca;
+}
+
+/* =========================================
+   9. CAC NUT TRONG THUNG RAC
+========================================= */
+
+.admin-users-page .user-restore-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #16a34a;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-users-page .user-restore-btn:hover {
+  background: #15803d;
+}
+
+.admin-users-page .user-force-delete-btn {
+  margin-left: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.admin-users-page .user-force-delete-btn:hover {
+  background: #b91c1c;
+}
+
+/* =========================================
+   10. FORM CHINH SUA NGUOI DUNG
+========================================= */
+
+.admin-users-page .user-edit-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.admin-users-page .user-edit-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.admin-users-page .user-edit-field label {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-users-page .user-edit-field input,
+.admin-users-page .user-edit-field select {
+  box-sizing: border-box;
+  width: 100%;
+  height: 42px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #fff;
+  color: #374151;
+  font-size: 14px;
+  outline: none;
+}
+
+.admin-users-page .user-edit-field input:focus,
+.admin-users-page .user-edit-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+.admin-users-page .user-edit-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  grid-column: 1 / -1;
+}
+
+.admin-users-page .user-edit-actions button {
+  min-height: 42px;
+  padding: 0 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-users-page .user-edit-actions button:hover {
+  background: #1d4ed8;
+}
+
+.admin-users-page .user-edit-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-users-page .user-edit-actions .user-edit-cancel {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.admin-users-page .user-edit-actions .user-edit-cancel:hover {
+  background: #d1d5db;
+}
+
+/* =========================================
+   11. RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+  .admin-users-page .admin-users-filter-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-users-page .admin-users-filter-field:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-users-page {
+    padding: 16px;
+  }
+
+  .admin-users-page .admin-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-users-page .admin-header h1,
+  .admin-users-page .admin-users-heading h1 {
+    font-size: 22px;
+  }
+
+  .admin-users-page .user-search {
+    width: 100%;
+  }
+
+  .admin-users-page .user-search input {
+    flex: 1;
+    width: auto;
+    min-width: 0;
+  }
+
+  .admin-users-page .user-search select {
+    flex: 1;
+    min-width: 130px;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-users-page .user-edit-form {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .admin-users-page .user-edit-actions {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-users-page .admin-users-heading h1 {
+    font-size: 23px;
+  }
+
+  .admin-users-page .admin-users-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .admin-users-page .admin-users-actions button,
+  .admin-users-page .admin-users-btn {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  .admin-users-page .admin-users-filter,
+  .admin-users-page .admin-users-list {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .admin-users-page .admin-users-filter-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .admin-users-page .admin-users-filter-field:first-child {
+    grid-column: auto;
+  }
+
+  .admin-users-page .admin-users-filter-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-users-page .admin-users-filter-actions button {
+    min-width: 0;
+  }
+
+  .admin-users-page .user-search input {
+    flex-basis: 100%;
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   THUNG RAC NGUOI DUNG
+========================================= */
+
+.user-trash-page .trash-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.user-trash-page .trash-header h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.user-trash-page .trash-header p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.user-trash-page .trash-back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 16px;
+  border: 1px solid #dbe2ea;
+  border-radius: 8px;
+  background: #fff;
+  color: #334155;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.user-trash-page .trash-back-button:hover {
+  background: #f1f5f9;
+}
+
+/* Thanh tim kiem */
+.user-trash-page .trash-search-form {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.user-trash-page .trash-search-form input {
+  flex: 1;
+  min-width: 220px;
+  height: 42px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  color: #374151;
+  font-size: 14px;
+}
+
+.user-trash-page .trash-search-form input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 12%);
+}
+
+.user-trash-page .trash-search-form button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.user-trash-page .trash-search-form button:hover {
+  background: #1d4ed8;
+}
+
+.user-trash-page .trash-search-form .trash-reset-button {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.user-trash-page .trash-search-form .trash-reset-button:hover {
+  background: #d1d5db;
+}
+
+.user-trash-page .trash-search-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Thong bao */
+.user-trash-page .trash-alert {
+  margin-bottom: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.user-trash-page .trash-alert-success {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+.user-trash-page .trash-alert-error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* Khung bang */
+.user-trash-page .trash-table-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 3px 12px rgb(15 23 42 / 3%);
+}
+
+.user-trash-page .trash-table-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.user-trash-page .trash-table-heading h2 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.user-trash-page .trash-table-heading span {
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Cuon ngang khi bang rong */
+.user-trash-page .trash-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.user-trash-page .trash-table {
+  width: 100%;
+  min-width: 1050px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.user-trash-page .trash-table th,
+.user-trash-page .trash-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.user-trash-page .trash-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.user-trash-page .trash-table td {
+  color: #4b5563;
+  font-size: 14px;
+}
+
+.user-trash-page .trash-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.user-trash-page .trash-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.user-trash-page .trash-user-name {
+  color: #1e293b !important;
+  font-weight: 600;
+}
+
+/* Nut thao tac */
+.user-trash-page .trash-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.user-trash-page .trash-restore-button,
+.user-trash-page .trash-delete-button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.user-trash-page .trash-restore-button {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.user-trash-page .trash-restore-button:hover {
+  background: #bbf7d0;
+}
+
+.user-trash-page .trash-delete-button {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.user-trash-page .trash-delete-button:hover {
+  background: #fecaca;
+}
+
+.user-trash-page .trash-actions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Trang thai rong va dang tai */
+.user-trash-page .trash-empty-state {
+  padding: 44px 20px;
+  text-align: center;
+  color: #64748b;
+}
+
+.user-trash-page .trash-empty-icon {
+  margin-bottom: 12px;
+  font-size: 36px;
+}
+
+.user-trash-page .trash-empty-state h3 {
+  margin: 0 0 8px;
+  color: #1e293b;
+  font-size: 17px;
+}
+
+.user-trash-page .trash-empty-state p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-trash-page .trash-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .user-trash-page .trash-back-button {
+    align-self: flex-start;
+  }
+
+  .user-trash-page .trash-search-form {
+    padding: 14px;
+  }
+
+  .user-trash-page .trash-search-form input {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  .user-trash-page .trash-table-heading {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .user-trash-page .trash-search-form button {
+    flex: 1;
+  }
+}
